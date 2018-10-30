@@ -4,9 +4,9 @@ var fs = require('fs');
 var repoOwner = process.argv[2];
 var repo = process.argv[3];
 
-if (!repo || !repoOwner) console.log('<repoOwner>', "<repo>", "is what I'm looking for here buddai");
-
 console.log('Welcome to the GitHub Avatar Downloader!');
+
+if (!repo || !repoOwner) console.log('<repoOwner>', "<repo>", "is what I'm looking for here buddai");
 
 function getRepoContributors(repoOwner, repoName, cb) {
   var options = {
