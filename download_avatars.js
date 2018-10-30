@@ -45,7 +45,7 @@ getRepoContributors(repoOwner, repo, function(err, result) {
     var name = result[i].login;
     var avatarUrl = result[i].avatar_url;
 
-    downloadImageByURL(avatarUrl, "imageCont/" + name + ".jpg");
+    downloadImageByURL(avatarUrl, "avatars/" + name + ".jpg");
   }
 });
 
