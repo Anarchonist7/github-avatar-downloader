@@ -9,6 +9,7 @@ console.log('Welcome to the GitHub Avatar Downloader!');
 if (!repo || !repoOwner) {
   console.log('<repoOwner>', "<repo>", "is what I'm looking for here buddai");
 }
+
 function getRepoContributors(repoOwner, repoName, cb) {
   var options = {
     url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contributors",
@@ -22,8 +23,6 @@ function getRepoContributors(repoOwner, repoName, cb) {
     cb(err, JSON.parse(body));
   });
 }
-
-
 
 function downloadImageByURL(url, filePath) {
   request.get(url)
@@ -47,7 +46,6 @@ getRepoContributors(repoOwner, repo, function(err, result) {
     var avatarUrl = result[i].avatar_url;
     downloadImageByURL(avatarUrl, "imageCont/" + name + ".jpg");
   }
-
 });
 
 
