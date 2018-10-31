@@ -1,5 +1,5 @@
 var request = require('request');
-// var token = require('./secrets.js');
+
 require('dotenv').config();
 var fs = require('fs');
 //gets input from command line
@@ -18,9 +18,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     headers: {
       'User-Agent': 'request',
       'Authorization': process.env.GITHUB_TOKEN
-      //token['GITHUB_TOKEN']
     }
-
   };
   request(options, function(err, res, body) {
     cb(err, JSON.parse(body));
@@ -36,7 +34,6 @@ function downloadImageByURL(url, filePath) {
   console.log('Response Status Code: ', response.statusCode, 'Response Message : ' + response.statusMessage + '\nResponse content: ' + response.headers['content-type']);
 })
 .pipe(fs.createWriteStream(filePath));
-
 }
 //Grabs all the images and puts them in imageCont giving each a specific file name
 getRepoContributors(repoOwner, repo, function(err, result) {
@@ -50,7 +47,3 @@ getRepoContributors(repoOwner, repo, function(err, result) {
     downloadImageByURL(avatarUrl, "avatars/" + name + ".jpg");
   }
 });
-
-
-
-
