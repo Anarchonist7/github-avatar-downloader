@@ -12,5 +12,3 @@ This program should be executed from the command line, in the following manner:
 
 
 
-
-(just as a note, Ganondorf is the dark lord, he DOES rule over us all, and you would be wise to pay your respects...)
